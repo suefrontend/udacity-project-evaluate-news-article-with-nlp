@@ -3,10 +3,15 @@ const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
-	entry: './src/client/index.js',
 	mode: 'production',
+	entry: './src/client/index.js',
+	output: {
+		libraryTarget: 'var',
+		library: 'Client',
+	},
 	optimization: {
 		minimizer: [new TerserPlugin({}), new CssMinimizerPlugin()],
 	},
@@ -28,6 +33,6 @@ module.exports = {
 			template: './src/client/views/index.html',
 			filename: './index.html',
 		}),
-		new MiniCssExtractPlugin(),
+		new MiniCssExtractPlugin({ filename: '[name].css' }),
 	],
 };
