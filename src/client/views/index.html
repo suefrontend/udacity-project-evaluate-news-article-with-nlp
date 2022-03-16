@@ -13,21 +13,21 @@
 
 		<main>
 			<section>
-				<form class="" onsubmit="return handleSubmit(event)">
+				<form class="" onsubmit="return Client.handleSubmit(event)">
+					<!-- <form class="" onsubmit="handleSubmit(event)"> -->
 					<input
-						id="name"
+						id="url"
 						type="text"
 						name="input"
 						value=""
-						onblur="onBlur()"
-						placeholder="Name"
+						placeholder="Enter URL here"
 					/>
 					<input
 						type="submit"
 						name=""
 						value="submit"
-						onclick="return handleSubmit(event)"
-						onsubmit="return handleSubmit(event)"
+						onclick="return Client.handleSubmit(event)"
+						onsubmit="return Client.handleSubmit(event)"
 					/>
 				</form>
 			</section>
@@ -41,5 +41,11 @@
 		<footer>
 			<p>This is a footer</p>
 		</footer>
+		<script>
+			function handleSubmit(e) {
+				e.preventDefault();
+				console.log('TESTTET');
+			}
+		</script>
 	</body>
 </html>
