@@ -13,8 +13,7 @@
 
 		<main>
 			<section>
-				<form id="form" onsubmit="return Client.handleSubmit(event)">
-					<!-- <form class="" onsubmit="handleSubmit(event)"> -->
+				<form id="form" onsubmit="return handleSubmit(event)">
 					<input
 						id="url"
 						type="text"
@@ -28,7 +27,10 @@
 
 			<section>
 				<strong>Form Results:</strong>
-				<div id="results"></div>
+				<div id="agreement"></div>
+				<div id="subjectivity"></div>
+				<div id="confidence"></div>
+				<div id="irony"></div>
 			</section>
 		</main>
 

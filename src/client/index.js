@@ -7,15 +7,12 @@ import './styles/footer.scss';
 import './styles/form.scss';
 import './styles/header.scss';
 
-document.getElementById('form').addEventListener('click', handleSubmit);
+document.getElementById('form').addEventListener('submit', handleSubmit);
 
-// console.log('formInput', formInput);
-
-document.getElementById('form').addEventListener('click', function (e) {
+document.getElementById('form').addEventListener('submit', function (e) {
 	e.preventDefault();
 	let formInput = document.getElementById('url').value;
 	checkForName(formInput);
 });
-// Client.checkForName(formInput);
 
 export { checkForName, handleSubmit };

@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
+const fetch = require('node-fetch');
 const mockAPIResponse = require('./mockAPI.js');
 const cors = require('cors');
 
@@ -20,7 +21,6 @@ console.log(`Your API key is ${process.env.API_KEY}`);
 console.log(__dirname);
 
 app.get('/', function (req, res) {
-	// res.sendFile('dist/index.html')
 	res.sendFile(path.resolve('dist/index.html'));
 });
 
@@ -28,7 +28,7 @@ app.get('/test', function (req, res) {
 	res.send(mockAPIResponse);
 });
 
-let userInput = '';
+let userInput = [];
 
 app.post('/api', async function (req, res) {
 	userInput = req.body.url;
