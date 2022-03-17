@@ -60,3 +60,5 @@ function isValidHttpUrl(string) {
 }
 
 export { handleSubmit };
+export { postData };
+export { isValidHttpUrl };
