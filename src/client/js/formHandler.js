@@ -3,7 +3,9 @@ function handleSubmit(event) {
 
 	let formInput = document.getElementById('url').value;
 
-	if (formInput) {
+	// console.log();
+
+	if (isValidHttpUrl(formInput)) {
 		postData('http://localhost:8081/api', { url: formInput }).then(function (
 			res
 		) {
@@ -44,5 +46,17 @@ const postData = async (url = '', data = {}) => {
 		console.log('Error', error);
 	}
 };
+
+function isValidHttpUrl(string) {
+	let url;
+
+	try {
+		url = new URL(string);
+	} catch (_) {
+		return false;
+	}
+
+	return url.protocol === 'http:' || url.protocol === 'https:';
+}
 
 export { handleSubmit };
