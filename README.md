@@ -21,7 +21,7 @@ $ npm run build-prod
 $ npm run start
 ```
 
-The app will be running in your browser on [localhost:8081](localhost:8081)
+The app will be running in your browser on [localhost:8081](http://localhost:8081)
 
 # API Key
 
@@ -40,7 +40,7 @@ After completing the steps above, open a second terminal and start the dev serve
 $ npm run build-dev
 ```
 
-The development version of the app will be running in your browser on [localhost:8080](localhost:8080)
+The development version of the app will be running in your browser on [localhost:8080](http://localhost:8080)
 
 # Test
 
